@@ -22,7 +22,7 @@ class UserSecurityCheckExtension extends SecurityCheckExtension
      *
      * @var null|string
      */
-    protected $provides = 'anomaly.module.users::security_check';
+    protected $provides = 'anomaly.module.users::security_check.user';
 
     /**
      * Check an HTTP request.
