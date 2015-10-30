@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/user_security_check-extension",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\UserSecurityCheckExtension\\": "src/"
+        }
+    }
+}
