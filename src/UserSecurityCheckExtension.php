@@ -1,5 +1,6 @@
 <?php namespace Anomaly\UserSecurityCheckExtension;
 
+use Anomaly\UserSecurityCheckExtension\Command\CheckUser;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Security\SecurityCheckExtension;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,12 +27,12 @@ class UserSecurityCheckExtension extends SecurityCheckExtension
     /**
      * Check an HTTP request.
      *
-     * @param UserInterface|null $user
+     * @param UserInterface$user
      * @return bool|Response
      */
-    public function check(UserInterface $user = null)
+    public function check(UserInterface $user)
     {
-        return parent::check($user);
+        return $this->dispatch(new CheckUser($user));
     }
 
 }
