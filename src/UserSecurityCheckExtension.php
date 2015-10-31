@@ -27,11 +27,15 @@ class UserSecurityCheckExtension extends SecurityCheckExtension
     /**
      * Check an HTTP request.
      *
-     * @param UserInterface$user
+     * @param UserInterface $user
      * @return bool|Response
      */
-    public function check(UserInterface $user)
+    public function check(UserInterface $user = null)
     {
+        if (!$user) {
+            return true;
+        }
+
         return $this->dispatch(new CheckUser($user));
     }
 
