@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\UserSecurityCheckExtension
  */
 class UserSecurityCheckExtension extends SecurityCheckExtension
 {
@@ -27,7 +26,7 @@ class UserSecurityCheckExtension extends SecurityCheckExtension
     /**
      * Check an HTTP request.
      *
-     * @param UserInterface $user
+     * @param  UserInterface $user
      * @return bool|Response
      */
     public function check(UserInterface $user = null)

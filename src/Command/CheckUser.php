@@ -3,7 +3,6 @@
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\UserAuthenticator;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Routing\Redirector;
 
 /**
@@ -12,9 +11,8 @@ use Illuminate\Routing\Redirector;
  * @link          http://pyrocms.com/
  * @author        PyroCMS, Inc. <support@pyrocms.com>
  * @author        Ryan Thompson <ryan@pyrocms.com>
- * @package       Anomaly\UserSecurityCheckExtension\Command
  */
-class CheckUser implements SelfHandling
+class CheckUser
 {
 
     /**
@@ -35,9 +33,9 @@ class CheckUser implements SelfHandling
     }
 
     /**
-     * @param UserAuthenticator $authenticator
-     * @param MessageBag        $message
-     * @param Redirector        $redirect
+     * @param  UserAuthenticator                      $authenticator
+     * @param  MessageBag                             $message
+     * @param  Redirector                             $redirect
      * @return bool|\Illuminate\Http\RedirectResponse
      */
     public function handle(UserAuthenticator $authenticator, MessageBag $message, Redirector $redirect)
