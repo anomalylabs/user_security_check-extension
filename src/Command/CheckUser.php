@@ -42,7 +42,7 @@ class CheckUser
     {
         if (!$this->user->isActivated()) {
 
-            $message->error('Your account has not been activated.');
+            $message->error('anomaly.extension.user_security_check::message.account_is_not_activated');
 
             $authenticator->logout(); // Just in case.
 
@@ -51,7 +51,7 @@ class CheckUser
 
         if (!$this->user->isEnabled()) {
 
-            $message->error('Your account has been disabled.');
+            $message->error('anomaly.extension.user_security_check::message.account_is_disabled');
 
             $authenticator->logout(); // Just in case.
 
