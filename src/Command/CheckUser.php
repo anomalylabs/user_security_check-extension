@@ -33,15 +33,14 @@ class CheckUser
     }
 
     /**
-     * @param  UserAuthenticator                      $authenticator
-     * @param  MessageBag                             $message
-     * @param  Redirector                             $redirect
+     * @param  UserAuthenticator $authenticator
+     * @param  MessageBag $message
+     * @param  Redirector $redirect
      * @return bool|\Illuminate\Http\RedirectResponse
      */
     public function handle(UserAuthenticator $authenticator, MessageBag $message, Redirector $redirect)
     {
         if (!$this->user->isActivated()) {
-
             $message->error('anomaly.extension.user_security_check::message.account_is_not_activated');
 
             $authenticator->logout(); // Just in case.
@@ -50,7 +49,6 @@ class CheckUser
         }
 
         if (!$this->user->isEnabled()) {
-
             $message->error('anomaly.extension.user_security_check::message.account_is_disabled');
 
             $authenticator->logout(); // Just in case.
