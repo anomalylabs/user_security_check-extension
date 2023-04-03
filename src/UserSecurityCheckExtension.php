@@ -35,7 +35,7 @@ class UserSecurityCheckExtension extends SecurityCheckExtension
             return true;
         }
 
-        return $this->dispatch(new CheckUser($user));
+        return $this->dispatchSync(new CheckUser($user));
     }
 
 }
